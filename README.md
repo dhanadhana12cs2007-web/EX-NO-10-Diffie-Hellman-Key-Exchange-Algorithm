@@ -1,5 +1,5 @@
 # EX-NO-10-Diffie-Hellman-Key-Exchange-Algorithm
-
+ 
 ## AIM:
 To Implement Diffie Hellman Key Exchange Algorithm 
 
@@ -20,10 +20,60 @@ To Implement Diffie Hellman Key Exchange Algorithm
 
 ## Program:
 
+```PY
+#include <stdio.h>
+#include <math.h>
 
+int power(int base, int exp, int mod)
+{
+    int result = 1;
+
+    while(exp > 0)
+    {
+        result = (result * base) % mod;
+        exp--;
+    }
+    return result;
+}
+
+int main()
+{
+    int p, g;
+    int a, b;
+    int A, B;
+    int keyA, keyB;
+
+    printf("Enter prime number (p): ");
+    scanf("%d", &p);
+
+    printf("Enter primitive root (g): ");
+    scanf("%d", &g);
+
+    printf("Enter private key of User A: ");
+    scanf("%d", &a);
+
+    printf("Enter private key of User B: ");
+    scanf("%d", &b);
+
+    A = power(g, a, p);
+    B = power(g, b, p);
+
+    printf("\nPublic Key of User A = %d", A);
+    printf("\nPublic Key of User B = %d", B);
+
+    keyA = power(B, a, p);
+    keyB = power(A, b, p);
+
+    printf("\n\nSecret Key computed by User A = %d", keyA);
+    printf("\nSecret Key computed by User B = %d", keyB);
+
+    return 0;
+}
+```
 
 ## Output:
 
+<img width="1533" height="732" alt="Screenshot 2026-05-14 162138" src="https://github.com/user-attachments/assets/b8ce0829-2635-47f6-b4e7-5f66944a8b97" />
 
 
 ## Result:
