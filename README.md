@@ -1,6 +1,7 @@
-NAME: S.KOWSHIK RAM
-REG.NO: 212225230143
-
+```
+##NAME: S.KOWSHIK RAM
+##REG.NO: 212225230143
+```
 
 # EX-NO-10-Diffie-Hellman-Key-Exchange-Algorithm
   
